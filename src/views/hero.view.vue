@@ -5,9 +5,8 @@
         <ion-title>Héros</ion-title>
       </ion-toolbar>
     </ion-header>
-
+    <router-view name="currentHero"></router-view>
     <ion-content>
-      <router-view name="currentHero"></router-view>
       <ListComponent
           listName="Héros"
           :data="heroes"
@@ -61,7 +60,7 @@
 </template>
 
 <script>
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import {IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 import ListComponent from "@/components/list.component.vue";
 import FormComponent from "@/components/form.component.vue";
 import {mapActions, mapState} from "vuex";
@@ -69,7 +68,6 @@ import {mapActions, mapState} from "vuex";
 export default {
   name: "HeroView",
   components: {
-    IonPage,
     IonHeader,
     IonToolbar,
     IonTitle,

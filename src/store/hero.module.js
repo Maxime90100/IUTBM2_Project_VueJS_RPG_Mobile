@@ -4,7 +4,7 @@ export default {
     namespaced: true,
     state: {
         heroes: [],
-        currentHero:null,
+        currentHero: null,
     },
     mutations: {
         setHeroes(state, heroes) {

@@ -2,7 +2,7 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>{{ formName }}</ion-card-title>
-      <ion-button slot="end" v-on:click="show">
+      <ion-button v-on:click="show">
         {{ extend ? "< hide" : "> show" }}
       </ion-button>
     </ion-card-header>
@@ -45,17 +45,20 @@
               + Add
             </ion-button>
 
-            <ion-list>
+            <ion-list class="added-items">
               <ion-item v-for="(item, i) in addItems" :key="'Form-textField-list-item-' + i">
-                <ion-label>{{ item }}</ion-label>
-                <ion-button size="small" fill="solid" slot="end" v-on:click="supress(i)">
+                <ion-button size="small" fill="solid" v-on:click="supress(i)">
                   Delete
                 </ion-button>
+                <ion-label>{{ item }}</ion-label>
               </ion-item>
             </ion-list>
           </ion-item>
         </ion-item-group>
-
+        <ion-label>
+          Les champs marqués d'un * sont obligatoires
+        </ion-label>
+        <br>
         <ion-button
             size="small"
             style="margin: 5px 0"
@@ -63,20 +66,20 @@
         >
           {{ sendButton }}
         </ion-button>
-
-        <ion-label>
-          Les champs marqués d'un * sont obligatoires
-        </ion-label>
       </ion-list>
     </ion-card-content>
   </ion-card>
 </template>
 
 <script>
+import {IonCard, IonCardHeader, IonCardTitle, IonButton, IonCardContent, IonList, IonItemGroup, IonItemDivider, IonLabel, IonItem, IonInput} from "@ionic/vue";
 import {mapMutations} from "vuex";
 
 export default {
   name: "FormComponent",
+  components:{
+    IonCard, IonCardHeader, IonCardTitle, IonButton, IonCardContent, IonList, IonItemGroup, IonItemDivider, IonLabel, IonItem, IonInput
+  },
   props:{
     formName:String,
     textFields:Array,
@@ -164,22 +167,5 @@ export default {
 </script>
 
 <style scoped>
-input{
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 10px;
-  width: 100%;
-  height: 30px;
-}
-div{
-  text-align: left;
-}
-.item{
-  padding: 5px 20px 10px 20px;
-  background-color: #4b6986;
-  border-radius: 10px;
-}
-.item > div{
-  margin-bottom: 5px;
-}
+
 </style>

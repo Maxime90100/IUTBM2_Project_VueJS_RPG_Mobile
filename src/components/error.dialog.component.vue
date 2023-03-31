@@ -1,5 +1,5 @@
 <template>
-  <ion-modal :is-visible="isError" :css-class="modalClass">
+  <ion-modal :is-open="isError" :css-class="modalClass">
     <ion-header>
       <ion-toolbar>
         <ion-title>{{ title }}</ion-title>

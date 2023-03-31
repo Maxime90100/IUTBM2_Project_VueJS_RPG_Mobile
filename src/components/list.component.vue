@@ -10,7 +10,6 @@
         <h4>Filtres</h4>
         <span v-for="(filter,i) in filterList" :key="'filter-'+i">
           <ion-input v-model="filterListValues[i]" class="filter" :placeholder="filter"></ion-input>
-          <span style="margin-left: 5px">{{filterListValues[i]}}</span><br>
         </span>
       </div>
       <span style="text-align: left">
@@ -91,29 +90,5 @@ export default {
 }
 </script>
 <style scoped>
-table{
-  text-align: left;
-  border: none;
-}
-th{
-  background-color: white;
-  color: #2c3e50;
-  border-radius: 10px;
-}
-th, td {
-  padding: 5px;
-  text-align: left;
-}
-.filerList{
-  text-align: left;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #202d3a;
-  border-radius: 10px;
-}
-.filter{
-  background-color: white;
-  border-radius: 20px;
-  margin: 5px 2px;
-}
+
 </style>

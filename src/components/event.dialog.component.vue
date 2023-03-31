@@ -1,7 +1,7 @@
 <template>
   <ion-modal :is-open="show">
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="success">
         <ion-title>{{ title }}</ion-title>
         <ion-buttons slot="end">
           <ion-button fill="clear" @click="$emit('closeDialog', true)">

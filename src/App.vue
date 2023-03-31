@@ -1,7 +1,7 @@
 <template>
   <ion-app>
     <ion-toolbar>
-      <ion-buttons slot="start">
+      <ion-buttons>
         <ion-button v-for="(btn, index) in btns" :key="index" @click="goTo(btn.path)">
           {{ btn.title }}
         </ion-button>
@@ -51,9 +51,10 @@ export default {
   data: () => ({
     index:-1,
     btns:[
+      {title:'Home',path:'/'},
       {title:'Heroes',path:'/heroes'},
       {title:'Teams',path:'/teams'},
-      {title:'Organisations',path:'/orgs'},
+      {title:'Orgs',path:'/orgs'},
       {title:'Auth',path:'/auth'}
     ]
   }),
@@ -79,8 +80,5 @@ export default {
 </script>
 
 <style scoped>
-ion-grid{
-  margin: 10px auto;
-  text-align: center;
-}
+
 </style>
